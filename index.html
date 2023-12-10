@@ -58,6 +58,13 @@ session.updateRenderState({
   baseLayer: new XRWebGLLayer(session, gl)
 });
 
+  /// ------------------------ GeoAR
+session.configure(session.config.apply{
+  geospatialMode = Config.GeospatialMode.ENABLED
+});
+  var anchor = session.earth.createAnchor(56.815585, -2.619137, 420, 0,0,0,1);
+
+  
 // A 'local' reference space has a native origin that is located
 // near the viewer's position at the time the session was created.
 const referenceSpace = await session.requestReferenceSpace('local');
@@ -90,6 +97,7 @@ const onXRFrame = (time, frame) => {
   }
 }
 session.requestAnimationFrame(onXRFrame);}
+
 </script>
 </body>
 </html>
