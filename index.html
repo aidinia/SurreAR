@@ -69,6 +69,7 @@ async function activateXR() {
         // Retrieve the pose of the device.
         // XRFrame.getViewerPose can return null while the session attempts to establish tracking.
         const pose = frame.getViewerPose(referenceSpace);
+      console.log(pose);
         if (pose) {
             // In mobile AR, we only have one view.
             const view = pose.views[0];
