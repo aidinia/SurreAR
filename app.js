@@ -19,6 +19,7 @@
  */
 (async function() {
   const isArSessionSupported = navigator.xr && navigator.xr.isSessionSupported && await navigator.xr.isSessionSupported("immersive-ar");
+  console.log(navigator.xr, navigator.xr.isSessionSupported , await navigator.xr.isSessionSupported("immersive-ar"))
   if (isArSessionSupported) {
     document.getElementById("enter-ar").addEventListener("click", window.app.activateXR)
   } else {
